@@ -99,11 +99,10 @@ h1, h2, h3, h4 { font-family: var(--font); line-height: 1.1; font-weight: 700; }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 1rem; }
 .brand { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font); font-weight: 800; }
 .brand__mark {
-  display: grid; place-items: center;
-  width: 38px; height: 38px; border-radius: 11px;
-  background: linear-gradient(135deg, var(--brand), var(--brand-deep));
-  color: #fff; font-size: 0.85rem; letter-spacing: 0.02em;
-  box-shadow: 0 6px 18px -6px rgba(0, 180, 216, 0.8);
+  width: 38px; height: 38px; border-radius: 50%;
+  object-fit: cover; flex: none;
+  background: #0a0a0a;
+  box-shadow: 0 6px 18px -6px rgba(0, 180, 216, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 .brand__text { font-size: 1.15rem; }
 .brand__text span { color: var(--brand-2); }
@@ -273,7 +272,7 @@ h1, h2, h3, h4 { font-family: var(--font); line-height: 1.1; font-weight: 700; }
 .chat.is-open { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
 .chat__header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.1rem; background: linear-gradient(120deg, var(--brand-deep), var(--brand)); }
 .chat__id { display: flex; align-items: center; gap: 0.7rem; }
-.chat__avatar { width: 40px; height: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.18); display: grid; place-items: center; font-family: var(--font); font-weight: 800; color: #fff; }
+.chat__avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: #0a0a0a; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25); flex: none; }
 .chat__id strong { display: block; font-family: var(--font); color: #fff; font-size: 0.98rem; }
 .chat__id small { color: rgba(255, 255, 255, 0.85); font-size: 0.78rem; display: flex; align-items: center; gap: 0.35rem; }
 .online-dot { width: 8px; height: 8px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.7); animation: blip 1.8s infinite; }
