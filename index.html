@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#06121f" />
   <title>Castilla Glass — South Florida Glass Installation, Repair &amp; Service</title>
   <meta name="description" content="Castilla Glass installs and repairs glass across South Florida — broken glass, shower doors, glass railings, storefronts, and window/door installation. Get an instant online estimate in minutes." />
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -41,7 +40,9 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__media" aria-hidden="true">
-        <img class="img-fallback" src="https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?auto=format&fit=crop&w=2000&q=80" alt="" loading="eager" />
+        <video autoplay muted loop playsinline poster="assets/img/hero-poster.jpg" preload="auto">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
         <div class="hero__overlay"></div>
       </div>
       <div class="container hero__content">
@@ -50,8 +51,8 @@
           <span class="hero__wordmark">Castilla<strong>Glass</strong></span>
         </div>
         <span class="eyebrow">South Florida · Licensed &amp; Insured</span>
-        <h1>Glass done right —<br /><span class="grad-text">quoted in minutes.</span></h1>
-        <p class="hero__sub">From shattered storm panes to frameless shower doors and glass railings, Castilla Glass delivers fast, precise installs across Miami-Dade, Broward &amp; Palm Beach. Skip the phone tag — our AI estimator gathers your details and prices the job on the spot.</p>
+        <h1>Crystal clear.<br /><span class="grad-text">Always.</span></h1>
+        <p class="hero__sub">Miami's trusted glass repair &amp; installation experts. From shattered storm panes to frameless shower doors and glass railings — skip the phone tag and get an instant estimate from our AI assistant in minutes.</p>
         <div class="hero__cta">
           <button class="btn btn--primary btn--lg" data-open-quote>⚡ Start instant estimate</button>
           <a href="#services" class="btn btn--ghost btn--lg">Explore services</a>
@@ -153,6 +154,29 @@
       </div>
     </section>
 
+    <!-- ============ SHOWCASE VIDEO ============ -->
+    <section class="section section--dark" id="showcase">
+      <div class="container showcase__grid">
+        <div class="showcase__copy reveal">
+          <span class="eyebrow">See it in motion</span>
+          <h2>Glass that defines South Florida skylines.</h2>
+          <p>From Brickell high-rises to Coral Gables estates, we engineer and install glass that's built for the light, the views, and the hurricane code. This is the standard behind every Castilla Glass job.</p>
+          <ul class="ticks">
+            <li>Impact-rated, code-compliant installs</li>
+            <li>Residential, commercial &amp; storefront</li>
+            <li>24/7 emergency response across the tri-county</li>
+          </ul>
+          <button class="btn btn--primary btn--lg" data-open-quote>⚡ Get your estimate</button>
+        </div>
+        <div class="showcase__frame reveal">
+          <span class="showcase__tag">● CG Glass · Miami</span>
+          <video autoplay muted loop playsinline controls poster="assets/img/gallery/facade.jpg" preload="metadata">
+            <source src="assets/video/showcase.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ WORK / GALLERY ============ -->
     <section class="section section--dark" id="work">
       <div class="container">
@@ -213,7 +237,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#top" class="brand"><img class="brand__mark" src="assets/img/logo.png" alt="Castilla Glass logo" width="38" height="38" /><span class="brand__text">Castilla<span>Glass</span></span></a>
-        <p>South Florida's instant-quote glass specialists. Residential &amp; commercial. Licensed &amp; insured.</p>
+        <p><strong>Crystal clear. Always.</strong> South Florida's instant-quote glass specialists. Residential &amp; commercial. Licensed &amp; insured.</p>
       </div>
       <div class="footer__col">
         <h4>Services</h4>
@@ -242,7 +266,7 @@
     </div>
     <div class="container footer__base">
       <span>© <span id="year"></span> Castilla Glass. All rights reserved.</span>
-      <span>Demo site · imagery via Unsplash</span>
+      <span>Daniel Castilla · (305) 219-0308 · Miami, FL</span>
     </div>
   </footer>
 

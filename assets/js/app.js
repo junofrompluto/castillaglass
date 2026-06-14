@@ -23,9 +23,6 @@
     },
   };
 
-  const UNSPLASH = (id, w = 900) =>
-    `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
-
   /* ---------------------------------------------------------
      SERVICES — each drives the gallery card AND the chatbot flow
   --------------------------------------------------------- */
@@ -35,7 +32,7 @@
       icon: "🚨",
       title: "Broken / emergency glass",
       blurb: "Storm, impact or break-in damage secured fast — same-day board-up available.",
-      img: "1550684848-fac1c5b4e853",
+      img: "assets/img/services/broken.jpg",
       base: 240, perSqFt: 22,
       questions: [
         { key: "item", q: "What broke? (e.g., window, sliding door, storefront, table top)", quick: ["Window", "Sliding glass door", "Storefront", "Tabletop / furniture"] },
@@ -48,8 +45,8 @@
       id: "repair",
       icon: "🔧",
       title: "Repair & service",
-      blurb: "Foggy seals, stuck rollers, failed hardware, scratched glass — we bring it back to new.",
-      img: "1581092160562-40aa08e78837",
+      blurb: "Foggy seals, stuck rollers, failed hardware, scratched glass — plus 24/7 emergency response.",
+      img: "assets/img/services/repair.jpg",
       base: 150, perSqFt: 9,
       questions: [
         { key: "item", q: "What needs repair or service?", quick: ["Foggy / failed seal", "Shower door hardware", "Window won't open", "Scratched glass", "Other"] },
@@ -62,7 +59,7 @@
       icon: "🚿",
       title: "Shower doors & enclosures",
       blurb: "Frameless, semi-frameless and custom enclosures in clear, low-iron or tinted glass.",
-      img: "1620626011761-996317b8d101",
+      img: "assets/img/services/shower.jpg",
       base: 900, perSqFt: 38,
       questions: [
         { key: "style", q: "Which style are you after?", quick: ["Frameless", "Semi-frameless", "Framed / sliding", "Not sure — advise me"] },
@@ -76,7 +73,7 @@
       icon: "🛡️",
       title: "Glass railings",
       blurb: "Balcony, stair and pool-deck railings — frameless or post systems, code-compliant.",
-      img: "1600607687939-ce8a6c25118c",
+      img: "assets/img/services/railings.jpg",
       base: 1200, perSqFt: 0, perLinFt: 165,
       questions: [
         { key: "location", q: "Where are the railings going?", quick: ["Balcony / terrace", "Staircase", "Pool deck", "Interior loft", "Commercial"] },
@@ -89,7 +86,7 @@
       icon: "🪟",
       title: "Window & door installation",
       blurb: "New construction or replacement — impact windows, sliders, French & entry doors.",
-      img: "1600585154340-be6161a56a0c",
+      img: "assets/img/services/windowdoor.jpg",
       base: 650, perSqFt: 55,
       questions: [
         { key: "type", q: "What are we installing?", quick: ["Impact windows", "Sliding glass door", "French doors", "Entry door", "Mixed project"] },
@@ -103,7 +100,7 @@
       icon: "🏢",
       title: "Commercial & storefront",
       blurb: "Storefronts, office partitions, curtain wall and tenant build-outs on contractor timelines.",
-      img: "1441986300917-64674bd600d8",
+      img: "assets/img/services/commercial.jpg",
       base: 1500, perSqFt: 48,
       questions: [
         { key: "project", q: "What's the commercial scope?", quick: ["Storefront / entrance", "Office partitions", "Curtain wall", "Tenant build-out", "Repair / replacement"] },
@@ -114,14 +111,14 @@
   ];
 
   const GALLERY = [
-    { img: "1486406146926-c627a92ad1ab", cap: "Curtain-wall storefront · Brickell", cls: "wide" },
-    { img: "1620626011761-996317b8d101", cap: "Frameless shower · Coral Gables", cls: "tall" },
-    { img: "1600607687939-ce8a6c25118c", cap: "Frameless balcony railing · Sunny Isles", cls: "" },
-    { img: "1449157291145-7efd050a4d0e", cap: "Glass facade · Downtown Miami", cls: "" },
-    { img: "1600585154340-be6161a56a0c", cap: "Impact sliders · Fort Lauderdale", cls: "" },
-    { img: "1502005229762-cf1b2da7c5d6", cap: "Custom enclosure · Aventura", cls: "" },
-    { img: "1441986300917-64674bd600d8", cap: "Retail storefront · Wynwood", cls: "wide" },
-    { img: "1556909211-36987daf7b4d", cap: "Pool-deck glass · Key Biscayne", cls: "" },
+    { src: "assets/img/gallery/facade.jpg", cap: "Commercial storefront · Miami", cls: "wide" },
+    { src: "assets/img/gallery/shower-frosted.jpg", cap: "Frosted shower enclosure · Coral Gables", cls: "tall" },
+    { src: "assets/img/gallery/railing-sunset.jpg", cap: "Frameless rooftop railing · Sunny Isles", cls: "" },
+    { src: "assets/img/gallery/window-install.jpg", cap: "Impact window install · Brickell", cls: "" },
+    { src: "assets/img/gallery/shower-marble.jpg", cap: "Frameless marble bath · Pinecrest", cls: "" },
+    { src: "assets/img/gallery/workers.jpg", cap: "Curtain-wall crew · Downtown", cls: "wide" },
+    { src: "assets/img/gallery/baseball.jpg", cap: "Emergency storefront response", cls: "" },
+    { src: "assets/img/gallery/van-night.jpg", cap: "24/7 mobile glass unit · Miami", cls: "" },
   ];
 
   const AREAS = [
@@ -140,21 +137,16 @@
   function renderServices() {
     const grid = $("#servicesGrid");
     grid.innerHTML = SERVICES.map((s) => `
-      <article class="service reveal" data-service="${s.id}" role="button" tabindex="0" aria-label="Start estimate for ${s.title}">
-        <div class="service__img"><img loading="lazy" src="${UNSPLASH(s.img)}" alt="${s.title}" onerror="this.style.display='none'" /></div>
-        <div class="service__body">
-          <span class="service__icon">${s.icon}</span>
-          <h3>${s.title}</h3>
-          <p>${s.blurb}</p>
-          <span class="service__cta">Start estimate →</span>
-        </div>
+      <article class="poster reveal" data-service="${s.id}" role="button" tabindex="0" aria-label="Start estimate for ${s.title}">
+        <img loading="lazy" src="${s.img}" alt="${s.title} — Castilla Glass" onerror="this.closest('.poster').style.background='linear-gradient(135deg,#161618,#a0141f)'" />
+        <div class="poster__cta"><span>Start estimate →</span></div>
       </article>`).join("");
   }
 
   function renderGallery() {
     $("#gallery").innerHTML = GALLERY.map((g) => `
       <figure class="reveal ${g.cls}">
-        <img loading="lazy" src="${UNSPLASH(g.img, 1100)}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1c2e,#0077b6)'" />
+        <img loading="lazy" src="${g.src}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#161618,#a0141f)'" />
         <figcaption>${g.cap}</figcaption>
       </figure>`).join("");
   }

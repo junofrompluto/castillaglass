@@ -94,12 +94,21 @@ To test the AI function locally, install the Netlify CLI and run `netlify dev`.
 
 ---
 
-## 🖼 Imagery
+## 🖼 Imagery & video
 
-Photos are loaded from [Unsplash](https://unsplash.com) and depict South Florida
-architecture, shower enclosures, railings and storefronts. Swap any `photo-…` ID
-in `assets/js/app.js` (the `SERVICES` and `GALLERY` arrays) to use your own
-project photos — ideally upload real Castilla Glass jobs for the strongest site.
+The site uses the Castilla Glass branded media kit (red/black/white):
+
+- `assets/img/services/*.jpg` — the six branded service posters (Broken, Repair/
+  Emergency, Shower, Railings, Windows & Doors, Commercial). These are the
+  clickable service cards.
+- `assets/img/gallery/*.jpg` — real project stills (storefronts, showers,
+  railings, the CG Glass van, crews on site).
+- `assets/video/hero.mp4` — cinematic hero background loop.
+- `assets/video/showcase.mp4` — the "See it in motion" feature video.
+- `assets/img/logo.png` / `logo.jpg` — the CG castle-shield badge.
+
+To swap any asset, drop a replacement at the same path (or update the `SERVICES`
+and `GALLERY` arrays in [`assets/js/app.js`](assets/js/app.js)).
 
 ---
 
