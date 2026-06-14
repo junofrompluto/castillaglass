@@ -1,0 +1,22 @@
+# Netlify configuration for Castilla Glass
+# Static site (no build step) + optional serverless chat function.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  # No build command needed — this is a static HTML/CSS/JS site.
+  command = ""
+
+# Pretty path: the front-end calls /api/chat, Netlify routes it to the function.
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
