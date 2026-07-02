@@ -28,30 +28,17 @@
   --------------------------------------------------------- */
   const SERVICES = [
     {
-      id: "broken",
-      icon: "🚨",
-      title: "Broken / emergency glass",
-      blurb: "Storm, impact or break-in damage secured fast — same-day board-up available.",
-      img: "assets/img/services/broken.jpg",
-      base: 240, perSqFt: 22,
+      id: "windowdoor",
+      icon: "🪟",
+      title: "Impact windows & doors",
+      blurb: "Factory-direct V&V impact windows, sliders, French & entry doors — Miami-Dade NOA, installed by our crews.",
+      img: "assets/img/services/windowdoor.jpg",
+      base: 650, perSqFt: 55,
       questions: [
-        { key: "item", q: "What broke? (e.g., window, sliding door, storefront, table top)", quick: ["Window", "Sliding glass door", "Storefront", "Tabletop / furniture"] },
-        { key: "emergency", q: "Is this an active emergency that needs same-day securing?", quick: ["Yes — urgent", "No — can schedule"] },
-        { key: "size", q: "Roughly how big is the broken pane? Give width × height in inches (e.g., 36 x 48). A rough guess is fine.", measure: true },
-        { key: "pane", q: "Single pane or double/insulated (two layers)?", quick: ["Single pane", "Double / insulated", "Not sure"] },
-      ],
-    },
-    {
-      id: "repair",
-      icon: "🔧",
-      title: "Repair & service",
-      blurb: "Foggy seals, stuck rollers, failed hardware, scratched glass — plus 24/7 emergency response.",
-      img: "assets/img/services/repair.jpg",
-      base: 150, perSqFt: 9,
-      questions: [
-        { key: "item", q: "What needs repair or service?", quick: ["Foggy / failed seal", "Shower door hardware", "Window won't open", "Scratched glass", "Other"] },
-        { key: "count", q: "How many units / openings are affected?", quick: ["1", "2–3", "4+"] },
-        { key: "age", q: "Roughly how old is the glass or unit?", quick: ["Under 5 yrs", "5–15 yrs", "15+ yrs / unsure"] },
+        { key: "type", q: "What are we installing?", quick: ["Impact windows", "Sliding glass door", "French doors", "Entry door", "Mixed project"] },
+        { key: "count", q: "How many openings?", quick: ["1", "2–4", "5–9", "10+"] },
+        { key: "impact", q: "Do you need hurricane-impact rated units? (Recommended in South Florida.)", quick: ["Yes — impact", "No", "Tell me the difference"] },
+        { key: "size", q: "Average opening size in inches, width × height (a typical window is about 36 x 60). Estimate is fine.", measure: true },
       ],
     },
     {
@@ -69,6 +56,19 @@
       ],
     },
     {
+      id: "mirrors",
+      icon: "🪞",
+      title: "Mirrors & mirror walls",
+      blurb: "Custom wall mirrors, gym & studio walls, vanity and beveled mirrors — cut and installed to size.",
+      img: "assets/img/services/mirror.jpg",
+      base: 220, perSqFt: 16,
+      questions: [
+        { key: "type", q: "What kind of mirror project?", quick: ["Wall / vanity mirror", "Gym / studio wall", "Beveled / framed", "Closet / door mirror", "Not sure"] },
+        { key: "size", q: "Roughly the size in inches — width × height (a typical vanity mirror is about 36 x 30). Estimate is fine.", measure: true },
+        { key: "edge", q: "Edge / finish preference?", quick: ["Polished edge", "Beveled edge", "Framed", "Undecided"] },
+      ],
+    },
+    {
       id: "railings",
       icon: "🛡️",
       title: "Glass railings",
@@ -82,20 +82,6 @@
       ],
     },
     {
-      id: "windowdoor",
-      icon: "🪟",
-      title: "Window & door installation",
-      blurb: "New construction or replacement — impact windows, sliders, French & entry doors.",
-      img: "assets/img/services/windowdoor.jpg",
-      base: 650, perSqFt: 55,
-      questions: [
-        { key: "type", q: "What are we installing?", quick: ["Impact windows", "Sliding glass door", "French doors", "Entry door", "Mixed project"] },
-        { key: "count", q: "How many openings?", quick: ["1", "2–4", "5–9", "10+"] },
-        { key: "impact", q: "Do you need hurricane-impact rated units? (Recommended in South Florida.)", quick: ["Yes — impact", "No", "Tell me the difference"] },
-        { key: "size", q: "Average opening size in inches, width × height (a typical window is about 36 x 60). Estimate is fine.", measure: true },
-      ],
-    },
-    {
       id: "commercial",
       icon: "🏢",
       title: "Commercial & storefront",
@@ -103,9 +89,9 @@
       img: "assets/img/services/commercial.jpg",
       base: 1500, perSqFt: 48,
       questions: [
-        { key: "project", q: "What's the commercial scope?", quick: ["Storefront / entrance", "Office partitions", "Curtain wall", "Tenant build-out", "Repair / replacement"] },
+        { key: "project", q: "What's the commercial scope?", quick: ["Storefront / entrance", "Office partitions", "Curtain wall", "Tenant build-out", "Glass replacement"] },
         { key: "area", q: "Approximate total glass area in square feet? A ballpark helps.", measure: true, unit: "sqft" },
-        { key: "timeline", q: "What's your timeline?", quick: ["ASAP / emergency", "2–4 weeks", "1–3 months", "Planning stage"] },
+        { key: "timeline", q: "What's your timeline?", quick: ["ASAP", "2–4 weeks", "1–3 months", "Planning stage"] },
       ],
     },
   ];
@@ -117,8 +103,8 @@
     { src: "assets/img/gallery/window-install.jpg", cap: "Impact window install · Brickell", cls: "" },
     { src: "assets/img/gallery/shower-marble.jpg", cap: "Frameless marble bath · Pinecrest", cls: "" },
     { src: "assets/img/gallery/workers.jpg", cap: "Curtain-wall crew · Downtown", cls: "wide" },
-    { src: "assets/img/gallery/baseball.jpg", cap: "Emergency storefront response", cls: "" },
-    { src: "assets/img/gallery/van-night.jpg", cap: "24/7 mobile glass unit · Miami", cls: "" },
+    { src: "assets/img/gallery/baseball.jpg", cap: "Storefront glass install · Miami", cls: "" },
+    { src: "assets/img/gallery/van-night.jpg", cap: "Mobile install unit · Miami", cls: "" },
   ];
 
   const AREAS = [
@@ -126,6 +112,23 @@
     "Sunny Isles", "Key Biscayne", "Hialeah", "Kendall", "Homestead",
     "Fort Lauderdale", "Hollywood", "Pembroke Pines", "Davie", "Boca Raton",
     "Delray Beach", "West Palm Beach", "Wellington", "Jupiter",
+  ];
+
+  const REVIEWS = [
+    { name: "Marisol R.", city: "Coral Gables", stars: 5, text: "Castilla replaced every window in our house with impact units. Factory-direct pricing beat three other quotes and the crew was spotless. Felt the difference in the noise alone." },
+    { name: "Andrés P.", city: "Brickell", stars: 5, text: "Frameless shower enclosure came out flawless — perfectly level, heavy glass, gorgeous hardware. The instant online quote was dead-on with the final price." },
+    { name: "Jenna M.", city: "Sunny Isles", stars: 5, text: "Glass railing on our balcony is stunning and rock solid. They handled the permit and the HOA paperwork. Genuinely easy to work with." },
+    { name: "Carlos & Vivian", city: "Doral", stars: 5, text: "Whole-home impact windows financed at $0 down. Knowing they make the windows themselves gave us real confidence. NOA docs handed over at the end." },
+    { name: "Tara S.", city: "Pinecrest", stars: 5, text: "Custom mirror wall for our home gym — cut perfectly to size and installed in one visit. Professional from quote to cleanup." },
+  ];
+
+  const FAQS = [
+    { q: "Do you make your own windows?", a: "Yes — Castilla Glass is the installation team for <strong>V&amp;V Windows &amp; Doors</strong>, our family's impact window &amp; door manufacturer in South Florida. You get factory-direct product and pricing, installed by the same family." },
+    { q: "Are your impact windows hurricane approved?", a: "Our impact windows and doors carry <strong>Miami-Dade NOA</strong> (Notice of Acceptance) and are rated for high winds and wind-borne debris. We hand over the approval documentation on completion." },
+    { q: "What glass work do you install?", a: "Impact windows &amp; doors, frameless and semi-frameless shower enclosures, mirrors &amp; mirror walls, glass railings, and commercial storefronts. We're an <strong>installation</strong> company — we install new glass rather than doing patch repairs." },
+    { q: "How accurate is the instant online estimate?", a: "It's a solid ballpark based on the details you provide. We lock in an exact price after a quick, free on-site measure — no obligation." },
+    { q: "Do you offer financing?", a: "Yes. Approved financing includes <strong>$0-down</strong> options with terms up to 15 years, plus PACE and traditional lenders. Ask for a monthly payment when you request your quote." },
+    { q: "What areas do you serve?", a: "Miami-Dade, Broward and Palm Beach — from Homestead to Jupiter. Check the service-area list below or just ask the estimator." },
   ];
 
   /* ---------------------------------------------------------
@@ -153,6 +156,77 @@
 
   function renderAreas() {
     $("#areaChips").innerHTML = AREAS.map((a) => `<span class="area-chip reveal">📍 ${a}</span>`).join("");
+  }
+
+  /* ---- testimonials carousel ---- */
+  function renderReviews() {
+    const track = $("#reviewsTrack");
+    const dots = $("#reviewsDots");
+    if (!track) return;
+    track.innerHTML = REVIEWS.map((r) => `
+      <article class="review">
+        <div class="review__stars" aria-label="${r.stars} out of 5 stars">${"★".repeat(r.stars)}</div>
+        <p class="review__text">“${r.text}”</p>
+        <div class="review__by"><strong>${r.name}</strong><span>${r.city} · Google review</span></div>
+      </article>`).join("");
+    dots.innerHTML = REVIEWS.map((_, i) => `<button class="reviews__dot${i === 0 ? " on" : ""}" data-i="${i}" aria-label="Review ${i + 1}"></button>`).join("");
+
+    let i = 0;
+    const cards = $$(".review", track);
+    const dotEls = $$(".reviews__dot", dots);
+    const go = (n) => {
+      i = (n + REVIEWS.length) % REVIEWS.length;
+      track.style.transform = `translateX(-${i * 100}%)`;
+      dotEls.forEach((d, k) => d.classList.toggle("on", k === i));
+    };
+    dotEls.forEach((d) => d.addEventListener("click", () => { go(+d.dataset.i); restart(); }));
+    let timer = setInterval(() => go(i + 1), 5500);
+    const restart = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 5500); };
+    void cards;
+  }
+
+  /* ---- FAQ accordion ---- */
+  function renderFaq() {
+    const list = $("#faqList");
+    if (!list) return;
+    list.innerHTML = FAQS.map((f, i) => `
+      <div class="faq-item" data-i="${i}">
+        <button class="faq-item__q" aria-expanded="false">${f.q}<span class="faq-item__ic" aria-hidden="true">+</span></button>
+        <div class="faq-item__a"><p>${f.a}</p></div>
+      </div>`).join("");
+    $$(".faq-item__q", list).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        const open = item.classList.contains("open");
+        $$(".faq-item", list).forEach((it) => { it.classList.remove("open"); it.querySelector(".faq-item__q").setAttribute("aria-expanded", "false"); });
+        if (!open) { item.classList.add("open"); btn.setAttribute("aria-expanded", "true"); }
+      });
+    });
+  }
+
+  /* ---- glass weight calculator ---- */
+  function initCalc() {
+    const form = $("#calcForm");
+    if (!form) return;
+    const W = $("#calcW"), H = $("#calcH"), T = $("#calcT"), TYPE = $("#calcType"), QTY = $("#calcQty");
+    const each = $("#calcEach"), total = $("#calcTotal");
+    const DENSITY = 2.5; // g/cm³ soda-lime
+    const fmt = (lb) => lb >= 1 ? `${lb.toFixed(1)} lb` : `${(lb * 16).toFixed(1)} oz`;
+    const calc = () => {
+      const w = parseFloat(W.value) || 0, h = parseFloat(H.value) || 0;
+      const tmm = parseFloat(T.value) || 0, mult = parseFloat(TYPE.value) || 1;
+      const qty = Math.max(1, parseInt(QTY.value) || 1);
+      // convert to cm: 1 in = 2.54 cm; thickness mm → cm
+      const areaCm2 = (w * 2.54) * (h * 2.54);
+      const volCm3 = areaCm2 * (tmm / 10);
+      const grams = volCm3 * DENSITY * mult;
+      const lbEach = grams / 453.592;
+      each.textContent = w && h ? fmt(lbEach) : "—";
+      total.textContent = w && h ? fmt(lbEach * qty) : "—";
+    };
+    [W, H, T, TYPE, QTY].forEach((el) => el.addEventListener("input", calc));
+    form.addEventListener("submit", (e) => e.preventDefault());
+    calc();
   }
 
   /* ---------------------------------------------------------
@@ -509,7 +583,7 @@
       const svc = SERVICES.find((s) => lc.includes(s.id) || s.title.toLowerCase().split(" ").some((w) => w.length > 3 && lc.includes(w)));
       userSay(text);
       if (svc) handleServicePick(svc);
-      else botSay("I can help with broken glass, repairs, shower doors, railings, window/door installs, and commercial work. Which is closest?").then(() =>
+      else botSay("I can help with impact windows &amp; doors, shower enclosures, mirrors, glass railings, and commercial storefronts. Which is closest?").then(() =>
         setQuick(SERVICES.map((s) => `${s.icon} ${s.title}`), (label) => handleServicePick(SERVICES.find((s) => label.includes(s.title)))));
     } else if (st.stage === "done") {
       userSay(text);
@@ -528,6 +602,9 @@
     renderServices();
     renderGallery();
     renderAreas();
+    renderReviews();
+    renderFaq();
+    initCalc();
     initChrome();
 
     chat.fab.addEventListener("click", () => openChat());

@@ -340,6 +340,92 @@ h3, h4 { font-family: var(--font); font-weight: 800; }
 .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---------- responsive ---------- */
+/* ---------- manufacturer (V&V) band ---------- */
+.maker { background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%); }
+.maker__inner { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.maker__badge {
+  display: grid; place-items: center; gap: 0.4rem; width: 150px; height: 150px; flex: none;
+  border-radius: 50%; background: radial-gradient(circle at 50% 35%, rgba(91, 200, 235, 0.18), transparent 70%);
+  border: 1px solid var(--line);
+}
+.maker__badge img { filter: drop-shadow(0 0 24px rgba(91, 200, 235, 0.5)); }
+.maker__badge span { font-family: var(--font); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; color: var(--brand-2); }
+.maker__copy h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+.maker__copy p { color: var(--muted); margin: 1rem 0 1.4rem; max-width: 62ch; }
+.maker__copy strong { color: var(--ink); }
+.maker__marks { list-style: none; display: flex; flex-wrap: wrap; gap: 0.7rem 1.6rem; }
+.maker__marks li { color: var(--muted); font-size: 0.94rem; }
+.maker__marks strong { color: var(--ink); }
+
+/* ---------- credibility bar ---------- */
+.cred { border-block: 1px solid var(--line); background: var(--bg-2); }
+.cred__inner { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; padding: 22px 0; text-align: center; }
+.cred__item { display: flex; flex-direction: column; gap: 0.2rem; position: relative; }
+.cred__item + .cred__item::before { content: ""; position: absolute; left: -0.5rem; top: 10%; height: 80%; width: 1px; background: var(--line); }
+.cred__item strong { font-family: var(--font); font-weight: 800; font-size: clamp(1.2rem, 2.4vw, 1.7rem); color: #fff; }
+.cred__item span { color: var(--muted); font-size: 0.76rem; }
+
+/* ---------- glass weight calculator ---------- */
+.calc__grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.calc__copy h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+.calc__copy p { color: var(--muted); margin: 1rem 0 1.4rem; }
+.calc__card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.2rem, 3vw, 1.8rem); box-shadow: var(--shadow); }
+.calc__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.calc__card label { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-bottom: 0.8rem; }
+.calc__card label span { color: var(--muted); font-weight: 400; }
+.calc__full { grid-column: 1 / -1; }
+.calc__card input, .calc__card select {
+  width: 100%; margin-top: 0.35rem; background: var(--bg); border: 1px solid var(--line); color: var(--ink);
+  border-radius: var(--radius-sm); padding: 0.7rem 0.8rem; font: inherit; font-weight: 600;
+}
+.calc__card input:focus, .calc__card select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(91, 200, 235, 0.22); }
+.calc__out { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem; }
+.calc__out div { background: linear-gradient(120deg, rgba(91, 200, 235, 0.14), rgba(46, 149, 203, 0.1)); border: 1px solid rgba(91, 200, 235, 0.35); border-radius: var(--radius-sm); padding: 0.9rem 1rem; text-align: center; }
+.calc__out span { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.calc__out strong { font-family: var(--font); font-weight: 800; font-size: 1.5rem; color: #fff; }
+.calc__note { font-size: 0.72rem; color: var(--muted); margin-top: 0.9rem; }
+
+/* ---------- testimonials ---------- */
+.reviews__stage { overflow: hidden; }
+.reviews__track { display: flex; transition: transform 0.6s var(--ease); }
+.review { flex: 0 0 100%; padding: 0 clamp(0.5rem, 4vw, 4rem); text-align: center; }
+.review__stars { color: #ffcf4a; font-size: 1.2rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+.review__text { font-size: clamp(1.1rem, 2.2vw, 1.5rem); line-height: 1.5; max-width: 62ch; margin: 0 auto 1.4rem; }
+.review__by strong { display: block; font-family: var(--font); font-weight: 800; }
+.review__by span { color: var(--muted); font-size: 0.85rem; }
+.reviews__dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.8rem; }
+.reviews__dot { width: 9px; height: 9px; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; transition: 0.2s; }
+.reviews__dot.on { background: var(--brand); transform: scale(1.25); }
+
+/* ---------- financing ---------- */
+.finance__inner { display: grid; grid-template-columns: 1fr 0.85fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.finance__copy h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+.finance__copy p { color: var(--muted); margin: 1rem 0 1.4rem; max-width: 56ch; }
+.finance__copy strong { color: var(--ink); }
+.finance__card { background: linear-gradient(150deg, var(--surface), var(--bg-2)); border: 1px solid rgba(91, 200, 235, 0.35); border-radius: 24px; padding: clamp(1.6rem, 4vw, 2.4rem); text-align: center; box-shadow: var(--shadow); }
+.finance__tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand-2); font-weight: 700; }
+.finance__big { font-family: var(--font); font-weight: 800; font-size: clamp(3rem, 9vw, 4.6rem); line-height: 1; color: #fff; margin: 0.6rem 0 0.2rem; }
+.finance__big span { font-size: 0.4em; vertical-align: super; color: var(--brand-2); }
+.finance__big small { font-size: 0.28em; color: var(--muted); font-weight: 600; }
+.finance__ex { color: var(--muted); font-size: 0.9rem; }
+.finance__meta { display: flex; justify-content: center; gap: 1.6rem; margin: 1.3rem 0 1rem; }
+.finance__meta strong { display: block; font-family: var(--font); font-weight: 800; color: var(--brand-2); font-size: 1.2rem; }
+.finance__meta span { color: var(--muted); font-size: 0.74rem; }
+.finance__fine { font-size: 0.68rem; color: var(--muted); line-height: 1.5; }
+
+/* ---------- FAQ ---------- */
+.faq__inner { max-width: 820px; margin-inline: auto; }
+.faq__list { display: flex; flex-direction: column; gap: 0.7rem; }
+.faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; transition: border-color 0.2s; }
+.faq-item.open { border-color: rgba(91, 200, 235, 0.5); }
+.faq-item__q { width: 100%; text-align: left; background: none; border: 0; color: var(--ink); font-family: var(--font); font-weight: 800; font-size: 1rem; padding: 1.1rem 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.faq-item__ic { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; background: rgba(91, 200, 235, 0.16); color: var(--brand-2); font-size: 1.2rem; transition: transform 0.25s var(--ease); }
+.faq-item.open .faq-item__ic { transform: rotate(45deg); }
+.faq-item__a { max-height: 0; overflow: hidden; transition: max-height 0.3s var(--ease); }
+.faq-item.open .faq-item__a { max-height: 320px; }
+.faq-item__a p { color: var(--muted); padding: 0 1.2rem 1.2rem; line-height: 1.6; }
+.faq-item__a strong { color: var(--ink); }
+
 @media (max-width: 980px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .process { grid-template-columns: repeat(2, 1fr); }
@@ -348,6 +434,12 @@ h3, h4 { font-family: var(--font); font-weight: 800; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .chat-preview { transform: none; }
+  .calc__grid, .finance__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .maker__inner { grid-template-columns: 1fr; text-align: center; }
+  .maker__badge { margin: 0 auto; }
+  .maker__marks { justify-content: center; }
+  .cred__inner { grid-template-columns: repeat(3, 1fr); gap: 1.4rem 1rem; }
+  .cred__item:nth-child(3n)::before { display: none; }
 }
 @media (max-width: 680px) {
   .nav__links, .nav__phone, .nav__actions .btn { display: none; }
@@ -380,6 +472,9 @@ h3, h4 { font-family: var(--font); font-weight: 800; }
   .hero__stats > div { flex: 1 0 40%; }
   .chat-fab { right: 16px; bottom: 16px; width: 58px; height: 58px; }
   .trustbar__inner { gap: 0.7rem 1.4rem; }
+  .cred__inner { grid-template-columns: 1fr 1fr; }
+  .cred__item:nth-child(2n)::before, .cred__item:nth-child(3n)::before { display: block; }
+  .cred__item:nth-child(2n)::before { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto; }
