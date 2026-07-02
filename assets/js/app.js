@@ -137,19 +137,34 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+  /* teal line icons per service (mockup tile style) */
+  const SVG_ATTRS = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+  const ICONS = {
+    windowdoor: `<svg ${SVG_ATTRS}><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="4" y1="12" x2="20" y2="12"/></svg>`,
+    shower: `<svg ${SVG_ATTRS}><rect x="6" y="3" width="12" height="18" rx="1.5"/><line x1="9" y1="10" x2="9" y2="14"/><path d="M18 3l3 3"/></svg>`,
+    mirrors: `<svg ${SVG_ATTRS}><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="9" y1="8" x2="14" y2="13"/><line x1="9" y1="12" x2="12" y2="15"/></svg>`,
+    railings: `<svg ${SVG_ATTRS}><line x1="3" y1="8" x2="21" y2="8"/><line x1="5" y1="8" x2="5" y2="20"/><line x1="12" y1="8" x2="12" y2="20"/><line x1="19" y1="8" x2="19" y2="20"/><line x1="3" y1="20" x2="21" y2="20"/></svg>`,
+    commercial: `<svg ${SVG_ATTRS}><path d="M4 9L5.5 4h13L20 9"/><path d="M5 9v11h14V9"/><path d="M9.5 20v-5h5v5"/><path d="M4 9h16"/></svg>`,
+  };
+  const CHEVRON = `<svg ${SVG_ATTRS}><polyline points="9 6 15 12 9 18"/></svg>`;
+
   function renderServices() {
     const grid = $("#servicesGrid");
     grid.innerHTML = SERVICES.map((s) => `
-      <article class="poster reveal" data-service="${s.id}" role="button" tabindex="0" aria-label="Start estimate for ${s.title}">
-        <img loading="lazy" src="${s.img}" alt="${s.title} — Castilla Glass" onerror="this.closest('.poster').style.background='linear-gradient(135deg,#10314f,#2e95cb)'" />
-        <div class="poster__cta"><span>Start estimate →</span></div>
+      <article class="svc reveal" data-service="${s.id}" role="button" tabindex="0" aria-label="Start estimate for ${s.title}">
+        <span class="svc__icon" aria-hidden="true">${ICONS[s.id] || ""}</span>
+        <div class="svc__txt">
+          <h3>${s.title}</h3>
+          <p>${s.blurb}</p>
+        </div>
+        <span class="svc__go" aria-hidden="true">${CHEVRON}</span>
       </article>`).join("");
   }
 
   function renderGallery() {
     $("#gallery").innerHTML = GALLERY.map((g) => `
       <figure class="reveal ${g.cls}">
-        <img loading="lazy" src="${g.src}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#10314f,#2e95cb)'" />
+        <img loading="lazy" src="${g.src}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#102834,#2f9fae)'" />
         <figcaption>${g.cap}</figcaption>
       </figure>`).join("");
   }
