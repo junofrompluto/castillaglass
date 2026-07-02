@@ -138,7 +138,7 @@
     const grid = $("#servicesGrid");
     grid.innerHTML = SERVICES.map((s) => `
       <article class="poster reveal" data-service="${s.id}" role="button" tabindex="0" aria-label="Start estimate for ${s.title}">
-        <img loading="lazy" src="${s.img}" alt="${s.title} — Castilla Glass" onerror="this.closest('.poster').style.background='linear-gradient(135deg,#161618,#a0141f)'" />
+        <img loading="lazy" src="${s.img}" alt="${s.title} — Castilla Glass" onerror="this.closest('.poster').style.background='linear-gradient(135deg,#10314f,#2e95cb)'" />
         <div class="poster__cta"><span>Start estimate →</span></div>
       </article>`).join("");
   }
@@ -146,7 +146,7 @@
   function renderGallery() {
     $("#gallery").innerHTML = GALLERY.map((g) => `
       <figure class="reveal ${g.cls}">
-        <img loading="lazy" src="${g.src}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#161618,#a0141f)'" />
+        <img loading="lazy" src="${g.src}" alt="${g.cap}" onerror="this.parentElement.style.background='linear-gradient(135deg,#10314f,#2e95cb)'" />
         <figcaption>${g.cap}</figcaption>
       </figure>`).join("");
   }
